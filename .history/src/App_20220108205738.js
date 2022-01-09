@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   return (
-   const arr =[100, 200, 300, 400, 500 ];
+   const arr =([100, 200, 300, 400, 500 ]);
    
    console.log(arr);
   );
