@@ -22,11 +22,3 @@ intersection.sort((a, b) => {
 });
 
 console.log(intersection[0].length);
-
-
-//sort와 filter차이
-
-	let i = [1, 2, 100000, 22 ,300 ,33];
-	i.sort((a,b)=>{
-		return b-a; //b-a는 내림차순, a-b는 오름차순
-	});
