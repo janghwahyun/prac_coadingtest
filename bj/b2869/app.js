@@ -7,6 +7,5 @@ let B = 1;
 let V = 5;
 
 let result = Math.celi((V - B) / (A - B)); // ???(V-B) -> 마지막 날에는 내려올수가 없지 이미 정점에 걸려있으니까
-let result = Math.celi(V / (A - B)); // ???(V-B)
 
 console.log(result);
