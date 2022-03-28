@@ -38,5 +38,3 @@ function dfs(n, start) {
 
   return cnt;
 }
-
-console.log(cnt);

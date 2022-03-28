@@ -14,6 +14,7 @@ function solution(n, graph) {
   let result = 0;
   // 노드 1로 dfs 시작
   result = dfs(n, 1);
+  console.log(result);
 }
 
 function dfs(n, start) {
@@ -38,5 +39,3 @@ function dfs(n, start) {
 
   return cnt;
 }
-
-console.log(cnt);
