@@ -17,7 +17,7 @@ function solution(n, graph) {
 }
 
 function dfs(n, start) {
-  // 현제 노드 방문처리
+  // 현재 노드 방문처리
   visited[start] = true;
   let stack = [];
   let cnt = 0;
@@ -29,12 +29,13 @@ function dfs(n, start) {
     for (let i = 0; i <= n; i++) {
       //현재 노드와 연결된것이 있고 그 연결노드가 아직 미방문임ㄴ
       if (graph[tmp][i] === 1 && visited[i] === false) {
-        stack.push(i); // 인접노드 삽입
+        stack.push(i); // 인접노드 삽입0
         cnt = cnt + 1; // 감염수
         visited[i] = true; // 인접노드 방문처리
       }
     }
   }
+  ``;
 
   return cnt;
 }
