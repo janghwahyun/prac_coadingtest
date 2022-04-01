@@ -25,3 +25,19 @@ function solution(brown, yellow) {
 
   return [x, i];
 }
+
+
+function solution(brown, yellow) {
+    var answer = [];
+    for(var x=1 ; x<=5000 ; ++x) { // 갈색 칸의 크기가 1부터 5000이므로 가로는 5000까지 가능
+        for(var y=1 ; y<=x ; ++y) { // 세로는 가로보다 작거나 같다
+            if(2*x+2*y-4==brown && x*y==brown+yellow) {
+              // 가로 두번 세로 두번을 더하고 각 꼭짓점을 빼면 테두리의 값 즉, 갈색의 값이다. 그리고 면적(모든 칸의 개수)에서 갈색을 빼면 노란색이다.
+              // 이 두 조건을 만족하는 x y 를 구하면 된다.
+                answer.push(x); answer.push(y);
+                break;
+            }
+        }
+    }
+    return answer;
+}
