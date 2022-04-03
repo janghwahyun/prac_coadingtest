@@ -1,0 +1,16 @@
+DFS (){
+
+	let 방문경로 = [];
+	let 스택 = [this.root];
+
+	while (스택.lenght !==0){
+		let current = 스택.pop();
+		if(current.right){
+			스택.push(current.right);
+		}
+		if(current.left){
+			스택.push(current.left);
+		}
+		결과값.push(current.data);
+	}
+}
