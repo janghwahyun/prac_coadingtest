@@ -14,6 +14,7 @@ function solution(n, computers) {
       while (stack.length > 0) { // stack에 요소가 남아있으면 반복함
         let current = stack.pop(); // current는 stack의 가장 끝 요소임.
         
+        
         for (let j=0; j < n; j++) { // current 요소를 돌면서 
             // 배열[i][j]가 1이면 서로 연결이고 && 미방문시            
           if (computers[current][j] == 1 && visited[j] == 0) { 
@@ -45,7 +46,7 @@ function solution(n, computers) {
         
         for (let j=0; j < n; j++) { // current 요소를 돌면서 
             // 배열[i][j]가 1이면 서로 연결이고 && 미방문시
-            // 현재 current의 있는 node 요소를 돈다
+            // 
           if (computers[current][j] == 1 && visited[j] == 0) { 
             stack.push(j);
             visited[j] = 1; // visted 방문체크
