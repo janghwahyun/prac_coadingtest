@@ -1,33 +1,32 @@
 // dfs function을 만들고 매개변수가 어떤게 들어갈지 생각하는 연습이 필요함
-// 네트워크 문제에서 서로의 노드가 1로 연결되어 있는 점과 비슷하다고 생각했음
 
 
 // 다른 풀이
 function solution(tickets) {
   tickets.sort(); // 글자순 정렬
-  let visited = Array(tickets.length).fill(false);
+  let vis = Array(tickets.length).fill(false);
   var answer = [];
   function dfs(current, cnt, path) {
-
     if (cnt === tickets.length && answer.length === 0) {
       //정렬했으므로 처음오는 경우의 수가 답
       answer = path;
       return;
     }
-    for (let i = 0; i < tickets.length; i++) {
-      if (visited[i]) continue;
-      if (tickets[i][0] === current) {// 출발하는 공항이 ICN 이라면 
-        
-        visited[i] = true;
+    for (let i = 0; i < tickets.length; i += 1) {
+      if (vis[i]) continue;
+      if (tickets[i][0] === current) {
+        // 출발하는 공항이 같다.
+        vis[i] = true;
         dfs(tickets[i][1], cnt + 1, [...path, tickets[i][1]]); //배열 복사해서 넣어주기
-        visited[i] = false;
+        vis[i] = false;
       }
     }
   }
   dfs('ICN', 0, ['ICN']);
   return answer;
-}
 
+  
+}
 // 다른 풀이
 
 function solution(tickets){

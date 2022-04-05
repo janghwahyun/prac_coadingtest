@@ -16,8 +16,8 @@ function solution(tickets) {
     }
     for (let i = 0; i < tickets.length; i++) {
       if (visited[i]) continue;
-      if (tickets[i][0] === current) {// 출발하는 공항이 ICN 이라면 
-        
+      if (tickets[i][0] === current) {
+        // 출발하는 공항이 같다.
         visited[i] = true;
         dfs(tickets[i][1], cnt + 1, [...path, tickets[i][1]]); //배열 복사해서 넣어주기
         visited[i] = false;
@@ -26,8 +26,9 @@ function solution(tickets) {
   }
   dfs('ICN', 0, ['ICN']);
   return answer;
-}
 
+  
+}
 // 다른 풀이
 
 function solution(tickets){

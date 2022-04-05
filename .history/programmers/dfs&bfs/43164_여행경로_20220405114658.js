@@ -8,16 +8,15 @@ function solution(tickets) {
   let visited = Array(tickets.length).fill(false);
   var answer = [];
   function dfs(current, cnt, path) {
-
     if (cnt === tickets.length && answer.length === 0) {
       //정렬했으므로 처음오는 경우의 수가 답
       answer = path;
       return;
     }
-    for (let i = 0; i < tickets.length; i++) {
+    for (let i = 0; i < tickets.length; i += 1) {
       if (visited[i]) continue;
-      if (tickets[i][0] === current) {// 출발하는 공항이 ICN 이라면 
-        
+      if (tickets[i][0] === current) {
+        // 출발하는 공항이 같다.
         visited[i] = true;
         dfs(tickets[i][1], cnt + 1, [...path, tickets[i][1]]); //배열 복사해서 넣어주기
         visited[i] = false;
@@ -26,8 +25,9 @@ function solution(tickets) {
   }
   dfs('ICN', 0, ['ICN']);
   return answer;
-}
 
+  
+}
 // 다른 풀이
 
 function solution(tickets){
